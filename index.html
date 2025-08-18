@@ -86,10 +86,32 @@
             )
         }
 
+        function Button({ className, children }) {
+            return (
+                <Text
+                    as = 'button'
+                    variant = 'heading'
+                    className = {`
+                        flex items-center justify-center rounded-xl 
+                        p-3 cursor-pointer text-(--text)
+                        bg-linear-(--gradient)
+                        hover:bg-linear(--gradient-hover)
+                        shadow-(--shadow)
+
+                        ${className ? className : ''}
+                    `}
+                >
+                    {children}
+                </Text>
+            )
+        }
+
         function App() {
             return (
                 <main className="py-28 px-4">
-                    <Text variant="blast">Hello world!</Text>
+                    <Button>
+                        CE
+                    </Button>
                 </main>
             )
         }
